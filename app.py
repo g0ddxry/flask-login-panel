@@ -20,7 +20,7 @@ def init_db():
     conn.commit()
     conn.close()
 
-@app.before_first_request
+@app.before_first_requestst
 def setup():
     init_db()
 
@@ -81,3 +81,4 @@ def logout():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
