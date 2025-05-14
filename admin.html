@@ -1,1 +1,20 @@
-
+<!DOCTYPE html>
+<html>
+<head><title>Panel Admin</title></head>
+<body>
+<h2>Panel de Administración</h2>
+<form method="POST">
+  Usuario: <input name="username"><br>
+  Contraseña: <input name="password" type="password"><br>
+  Expira (YYYY-MM-DD): <input name="expires"><br>
+  <button type="submit">Agregar Usuario</button>
+</form>
+<h3>Usuarios registrados:</h3>
+<ul>
+{% for user in users %}
+  <li>{{ user[1] }} - Expira: {{ user[3] }}</li>
+{% endfor %}
+</ul>
+<a href="/logout">Cerrar sesión</a>
+</body>
+</html>
